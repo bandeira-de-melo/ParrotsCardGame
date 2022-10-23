@@ -32,8 +32,13 @@ let secondCardClass = ""
 let counter = 0
 let tries = 0
 
+
+
+
 function flip(element){
     tries++;
+    let cardsFlipped = document.querySelectorAll(".game-card__inside");
+    cardsFlipped = Array.from(cardsFlipped)
     if (counter == 0){
         element.classList.add('flipped')
         firstCard = element
@@ -47,18 +52,26 @@ function flip(element){
             setTimeout(removeFlip, 2000, firstCard, secondCard)
         }
     } 
+    
     counter++;
     if (counter == 2){
         counter = 0
     }
-    
+        
+    let check = cardsFlipped.every((cd) => cd.classList.contains("flipped"));
+        if (check === true) {
+        alert(`Você ganhou em ${tries} jogadas!`)
+        }
 }
+
 
 function removeFlip(el, el2){
     el.classList.remove("flipped")
     el2.classList.remove("flipped")
     
 }
+
+
 
 for(let item = 0; item < wholeSortedDeck.length; item++) {
     cardsContainer.innerHTML += 
