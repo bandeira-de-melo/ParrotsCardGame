@@ -97,6 +97,9 @@ h1 {
 }
 
 .game-card__side-back {
-    background-color: rgb(255, 4, 4);
+    background-color: #636363;
     transform: rotateY(180deg);
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
