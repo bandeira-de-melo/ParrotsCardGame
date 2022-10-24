@@ -1,5 +1,8 @@
 
-let numberOfCards = ""
+let firstCard, secondCard, firstCardClass, secondCardClass, numberOfCards = ""
+let counter = 0
+let tries = 0
+
 //criar lista de backImages
 listBackImages = ["back-01.png","back-02.png", "back-03.png","back-04.png","back-05.png","back-06.png","back-07.png"]
 //lista embaralhada
@@ -25,13 +28,6 @@ let secondHalf = firstHalf
 let wholeDeck = firstHalf.concat(secondHalf)
 let wholeSortedDeck = wholeDeck.sort(comparador) //
 
-let firstCard = ""
-let secondCard = ""
-let firstCardClass =""
-let secondCardClass = ""
-let counter = 0
-let tries = 0
-
 
 
 
@@ -49,7 +45,7 @@ function flip(element){
         secondCard = element 
         secondCardClass = element.getAttribute('class')
         if (firstCardClass != secondCardClass){
-            setTimeout(removeFlip, 2000, firstCard, secondCard)
+            setTimeout(removeFlip, 1000, firstCard, secondCard)
         }
     } 
     
@@ -72,6 +68,9 @@ function removeFlip(el, el2){
 }
 
 
+function comparador() { 
+    return Math.random() - 0.5; 
+}
 
 for(let item = 0; item < wholeSortedDeck.length; item++) {
     cardsContainer.innerHTML += 
@@ -90,20 +89,6 @@ for(let item = 0; item < wholeSortedDeck.length; item++) {
 
 
 
-/*
-const listOfCards = []
 
-*/
-// dividir o numero de cartas por 2
-
-// embaralhar cartas
-function comparador() { 
-	return Math.random() - 0.5; 
-}
-
-
-// guardar metade do numero de cartas solicitadas 
-// 
-// embaralhar 
 
 
