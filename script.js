@@ -55,9 +55,12 @@ function flip(element){
     }
         
     let check = cardsFlipped.every((cd) => cd.classList.contains("flipped"));
+    function result(){
         if (check === true) {
-        alert(`Você ganhou em ${tries} jogadas!`)
-        }
+            alert(`Você ganhou em ${tries} jogadas!`)
+            }
+    }    
+    setTimeout(result, 1000)
 }
 
 
